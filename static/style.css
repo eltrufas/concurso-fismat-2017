@@ -1,0 +1,21 @@
+
+.header-logo {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.jumbotron {
+  padding: 2em;
+}
+
+.main-container {
+  background-color: white;
+  padding: 2em;
+  color: #555;
+}
+
+.note-block {
+  padding: 1em;
+  border-radius: 5px;
+  background-color: #eee;
+}

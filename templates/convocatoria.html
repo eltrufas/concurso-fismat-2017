@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% set active_nav="convocatoria" %}
+
+{% block content %}
+
+<div class="row">
+    <h1>Convocatoria</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <embed src="{{ url_for('static', filename='ConvocatoriaXLIX_CRFyM.pdf') }}" width="100%" height="500" type='application/pdf'>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+
+{% endblock %}

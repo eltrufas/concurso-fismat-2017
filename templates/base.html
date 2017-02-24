@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>XLIX Concurso regional de Física y Matemáticas</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="navbar-static-top.css" rel="stylesheet">
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+
+
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+
+          <a class="navbar-left header-logo" href="#"><img  height="50" src="http://www.uson.mx/institucional/images/escudo-gde-trans.png" alt=""></a>
+          <a class="navbar-brand" href="#">XLIX Concurso regional de Física y Matemáticas</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            {% for link_id in links %}
+                {% if pages[link_id]['type'] == 'template' %}
+                    <li {{ 'class=active' if active_nav == link_id }}><a  href="{{ url_for('page', page_id=link_id) }}">{{pages[link_id]['name']}}</a></li>
+                {% elif pages[link_id]['type'] == 'link' %}
+                    <li><a href="{{ pages[link_id]['url'] }}">{{pages[link_id]['name']}}</a></li>
+                {% elif pages[link_id]['type'] == 'link_list' %}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{pages[link_id]['name']}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            {% for page in pages[link_id]['links'] %}
+                                <li><a href="{{ page['url'] }}">{{ page['name'] }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container main-container">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+
+    {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    {% endblock %}
+  </body>
+</html>

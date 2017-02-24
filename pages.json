@@ -1,0 +1,73 @@
+{
+    "nav_links": [
+        "inicio",
+        "convocatoria",
+        "inscripcion",
+        "examenes",
+        "eds_anteriores",
+        "sitios_interes",
+        "mapa",
+        "contacto",
+        "faqs"
+    ],
+    "link_details": {
+        "inicio": {
+            "name": "Inicio",
+            "type": "template",
+            "template": "index.html"
+        },
+        "convocatoria": {
+            "name": "Convocatoria",
+            "type": "template",
+            "template": "convocatoria.html"
+        },
+        "inscripcion": {
+            "name": "Inscripción",
+            "type": "link",
+            "url": "https://google.com"
+        },
+        "examenes": {
+            "name": "Exámenes muestra",
+            "type": "template",
+            "template": "examenes.html"
+        },
+        "eds_anteriores": {
+            "name": "Ediciones anteriores",
+            "type": "template",
+            "template": "eds_anteriores.html"
+        },
+        "sitios_interes": {
+            "name": "Sitios de interés",
+            "type": "link_list",
+            "links": [
+                {
+                    "name": "Wolfram Alpha",
+                    "url": "https://www.wolframalpha.com/"
+                },
+                {
+                    "name": "Google",
+                    "url": "https://google.com/"
+                },
+                {
+                    "name": "Reddit",
+                    "url": "https://reddit.com/"
+                }
+            ]
+        },
+        "mapa": {
+            "name": "Mapa",
+            "type": "link",
+            "url": "https://maps.google.com"
+        },
+        "contacto": {
+            "name": "Contacto",
+            "type": "template",
+            "template": "contacto.html"
+        },
+        "faqs": {
+            "name": "FAQs",
+            "type": "template",
+            "template": "faqs.html"
+        }
+    }
+}

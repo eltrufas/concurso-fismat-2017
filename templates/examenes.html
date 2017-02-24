@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% set active_nav="examenes" %}
+
+{% block content %}
+
+<div class="row">
+    <h1>Examenes muestra</h1>
+</div>
+
+<div class="row">
+    <p>
+        A continuación se encuentran enlaces para descargar los exámenes que se emplearon en una edición anterior del Concurso Regional y que sirven como muestra del tipo de exámenes que se aplican en las dos etapas escritas del mismo:
+    </p>
+    <p><a href={{ url_for('static', filename='examenes/fisica1.pdf') }}>Primer examen de Física</a></p>
+    <p><a href={{ url_for('static', filename='examenes/fisica2.pdf') }}>Segundo examen de Física</a></p>
+    <p><a href={{ url_for('static', filename='examenes/matem1.pdf') }}>Primer examen de Matemáticas</a></p>
+    <p><a href={{ url_for('static', filename='examenes/matem2.pdf') }}>Segundo examen de Matemáticas</a></p>
+</div>
+
+{% endblock %}
